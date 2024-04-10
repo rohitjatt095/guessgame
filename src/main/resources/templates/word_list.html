@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User List</title>
+</head>
+<body>
+
+<h2>Employee List</h2>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Word</th>
+    <th>Hints</th>
+    <th>Level</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr th:each="word : ${words}">
+    <td th:text="${word.id}"></td>
+    <td th:text="${word.word}"></td>
+    <td th:text="${word.hints}"></td>
+    <td th:text="${word.level}"></td>
+    <td>
+      <a th:href="@{/Employees/edit/{id}(id=${admin.id})}">Edit</a>
+    </td>
+    <td>
+      <a th:href="@{/Employees/delete/{id}(id=${admin.id})}">Delete</a>
+    </td>
+  </tr>
+</table>
+<br/>
+<a th:href="@{/Employees/form}">Add New User</a>
+
+
+
+
+</body>
+</html>

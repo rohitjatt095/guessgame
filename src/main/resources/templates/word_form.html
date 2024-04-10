@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Word Form</title>
+</head>
+<body>
+<h2>Add Word</h2>
+<form action="/admin/words/add" method="post">
+    <div>
+
+        <input type="hidden" th:field="*{id}"/>
+        <label>Word:</label>
+        <input type="text" th:field="*{word}"/>
+        <label>Hint:</label>
+        <input type="text" th:field="*{hint}"/>
+        <label>level:</label>
+        <input type="text" th:field="*{level}"/>
+        <br/>
+        <input type="submit" value="Save"/>
+        <a th:href="@{/Employees/list}">Cancel</a>
+    </div>
+
+
+</form>
+</body>
+</html>
